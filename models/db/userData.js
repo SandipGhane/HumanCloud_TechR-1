@@ -34,10 +34,6 @@ const UserDataSchema = new Schema({
             type:Number
         }
     },
-    password:{
-        type:String,
-        required:true
-    },
     profileID:String
 },{
     collation:'UserData'

@@ -5,7 +5,7 @@ const cors = require('cors');
 const path = require('path');
 const mongoose = require("mongoose");
 
-const auth = require('./routes/auth');
+const profile = require('./routes/profile');
 const app = express();
 
 const addMiddleware = async ()=>{
@@ -26,7 +26,7 @@ mongoose
   .catch(err => console.error("Could not connect to MongoDB..."));
 
 const addRoutes =()=>{
-  app.use('/auth',auth);
+  app.use('/profile',profile);
 }
 
 
