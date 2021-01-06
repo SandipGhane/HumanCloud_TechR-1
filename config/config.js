@@ -1,6 +1,6 @@
 var config = {
   server: {
-    port: 5000
+    port: 7000
   },
 }
 
