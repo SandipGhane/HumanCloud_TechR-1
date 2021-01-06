@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const { getBalance } = require('../controllers/wallet');
+const { getBalance, addFunds } = require('../controllers/wallet');
 
 router.get('/balance',async(req,res)=>{
     try{
@@ -10,6 +10,15 @@ router.get('/balance',async(req,res)=>{
     }catch(e){
         res.status(500).send(0,e.message,e);
    }
+})
+
+router.post('/addfund',async(req,res)=>{
+    try{
+        const response = await addFunds(req.body);
+        res.status(200).send(response);
+    }catch(e){
+        res.status(500).send(0,e.message,e);
+    }
 })
 
 module.exports = router

@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const User = require('../db/userData');
 
-const operations = ['deposit', 'withdrawal', 'transfer'];
+const operations = ['AddFunds', 'withdrawal', 'transfer'];
 
 const transactionSchema = new mongoose.Schema({
     operation: {
@@ -9,14 +9,13 @@ const transactionSchema = new mongoose.Schema({
       required: true,
       enum: operations,
     },
-    accountNumber: {
+    phone: {
       type: 'Number',
-      ref: 'Customer',
+      ref: 'User',
       required: true,
     },
     destinationAccountNumber: {
       type: 'Number',
-      ref: 'Customer'
     },
     amount: {
       type: Number,

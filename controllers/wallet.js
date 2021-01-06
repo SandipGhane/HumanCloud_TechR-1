@@ -1,10 +1,14 @@
 const { getAccountBalance } = require('../models/wallet')
-
-const getBalance =async(params)=>{
+const { debitCard } = require('./paymentService')
+exports.getBalance =async(params)=>{
     const balance = await getAccountBalance(params);
     return balance;
 }
-
-module.exports = {
-    getBalance
+exports.addFunds = async(params)=>{
+    try{  
+        const paymentResponse = await debitCard(params);
+       return paymentResponse;
+    }catch(err){
+        next(err)
+    }
 }
