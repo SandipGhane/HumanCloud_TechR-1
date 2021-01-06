@@ -40,5 +40,6 @@ const findOne = (Model, query) => Model.find(query);
 
 module.exports ={
     saveUserDetails,
-    deleteData
+    deleteData,
+    findUser
 }

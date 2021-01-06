@@ -34,6 +34,11 @@ const UserDataSchema = new Schema({
             type:Number
         }
     },
+    balance:{
+        type:Number,
+        min:0,
+        default:0
+    },
     profileID:String
 },{
     collation:'UserData'

@@ -6,6 +6,7 @@ const path = require('path');
 const mongoose = require("mongoose");
 
 const profile = require('./routes/profile');
+const ewallet = require('./routes/wallet');
 const app = express();
 
 const addMiddleware = async ()=>{
@@ -27,6 +28,7 @@ mongoose
 
 const addRoutes =()=>{
   app.use('/profile',profile);
+  app.use('/ewallet',ewallet);
 }
 
 
