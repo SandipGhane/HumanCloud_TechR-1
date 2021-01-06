@@ -1,4 +1,4 @@
-const { saveUserDetails } = require('../models/register')
+const { saveUserDetails,deleteData } = require('../models/register')
 
 
 const newUserRegistration = async(params)=>{
@@ -14,6 +14,11 @@ const newUserRegistration = async(params)=>{
     })
     console.log('response here',response);
 }
+
+const deleteUserData= async(profileID)=>{
+    const deleteUser = await deleteData(profileID);
+}
 module.exports ={
-    newUserRegistration
+    newUserRegistration,
+    deleteUserData
 }
