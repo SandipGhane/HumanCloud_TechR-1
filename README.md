@@ -32,12 +32,14 @@ http://localhost:7000/auth/signup
 
 Req Body
 
-```{
+```
+{
   "email": "sandyghane@gmail.com",
   "password": "sandip",
   "confirmPassword": "sandip",
   "phone": 8888710346
-}```
+}
+```
 
 
 
