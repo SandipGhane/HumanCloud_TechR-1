@@ -1,5 +1,6 @@
 "use strict"
 const express = require("express");
+const dotenv = require('dotenv');
 const config = require("./config/config");
 const cors = require('cors');
 const path = require('path');
@@ -9,6 +10,7 @@ const profile = require('./routes/profile');
 const ewallet = require('./routes/wallet');
 const app = express();
 
+dotenv.config();
 const addMiddleware = async ()=>{
   app.use(express.json());
   app.use(express.urlencoded({ limit: '50mb', extended: false }));
