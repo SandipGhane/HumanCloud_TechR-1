@@ -13,7 +13,8 @@ router.post('/register',async (req,res)=>{
 router.delete('/deleteUser',async (req,res)=>{
     const { profileID } = req.query;
    try {
-       const res = await deleteUserData(profileID);
+       const response = await deleteUserData(profileID);
+       res.status(200).send(response);
    }catch(e){
         res.status(500).send(0,e.message,e);
    }

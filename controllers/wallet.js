@@ -1,5 +1,5 @@
 const { getAccountBalance } = require('../models/wallet')
-const { debitCard } = require('./paymentService')
+const { debitCard,transactionList } = require('./paymentService')
 exports.getBalance =async(params)=>{
     const balance = await getAccountBalance(params);
     return balance;
@@ -11,4 +11,9 @@ exports.addFunds = async(params)=>{
     }catch(err){
         next(err)
     }
+}
+
+exports.getTransactions = async(params)=>{
+    const list = await transactionList(params);
+    return list;
 }

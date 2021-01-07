@@ -1,6 +1,5 @@
 const {v4: uuidv4} = require('uuid');
 const crypto = require('crypto');
-const moment = require('moment-timezone');
 const GatewayTransaction = require('../models/gatewayTransaction.model');
 const { error } = require('console');
 const Transaction = require('../models/db/transaction');
@@ -51,4 +50,12 @@ exports.debitCard = async (params)=>{
     }
     savedTransaction.accountBalance = updatedAmount;
     return savedTransaction;
+}
+
+exports.transactionList = async(phone)=>{
+    const list = await Transaction.find({phone:phone});
+    if(list.length == 0){
+        return ({message:'No Transaction history',status:0});
+    }
+    return ({message:"Transaction History",data:list});
 }

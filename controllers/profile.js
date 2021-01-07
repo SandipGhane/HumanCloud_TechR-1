@@ -17,6 +17,7 @@ const newUserRegistration = async(params)=>{
 
 const deleteUserData= async(profileID)=>{
     const deleteUser = await deleteData(profileID);
+    return deleteUser;
 }
 module.exports ={
     newUserRegistration,
