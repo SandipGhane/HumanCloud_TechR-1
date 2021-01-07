@@ -14,13 +14,18 @@ const transactionSchema = new mongoose.Schema({
       ref: 'User',
       required: true,
     },
-    destinationAccountNumber: {
+    destignationPhone: {
       type: 'Number',
+      ref: 'User',
+      required: true,
     },
     amount: {
       type: Number,
       default: 0,
       required: true,
+    },
+    reference: {
+      type: String,
     },
   }, {
     timestamps: true,
