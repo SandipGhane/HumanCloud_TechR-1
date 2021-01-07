@@ -12,7 +12,7 @@ const newUserRegistration = async(params)=>{
     const response = await saveUserDetails({
         firstName, lastName, phone, email, address,profileID
     })
-    console.log('response here',response);
+   return response;
 }
 
 const deleteUserData= async(profileID)=>{

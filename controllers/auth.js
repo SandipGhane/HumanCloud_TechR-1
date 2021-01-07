@@ -1,5 +1,7 @@
 const User = require('../models/db/userData');
 const { signJWT } = require('../utils/index');
+const { createNewUser } = require('../models/register')
+
 exports.login = async(params)=>{
     const {email ,password } = params;
     const user = await User.findOne({email:email});
@@ -12,4 +14,13 @@ exports.login = async(params)=>{
     return {
         message: 'User logged in', userToken, profileID: user.profileID,
     };
+}
+
+exports.signup = async(params) =>{
+    const {password,confirmPassword} = params;
+    if(password != confirmPassword){
+        return{message:'password and confirm password not match',status:0};
+    }
+    const response = await createNewUser(params);
+    return response;
 }

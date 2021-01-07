@@ -6,19 +6,18 @@ const { hashSync, genSaltSync, compareSync } = require('bcrypt-nodejs');
 const UserDataSchema = new Schema({
     firstName:{
         type:String,
-        required:true,
     },
     lastName:{
         type:String,
-        required:true,
     },
     phone:{
         type:Number,
-        required:true,
     },
     email:{
         type:String,
-        required:true,
+    },
+    password:{
+        type:String
     },
     address:{
         state:{
