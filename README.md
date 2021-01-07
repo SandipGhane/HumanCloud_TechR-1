@@ -41,5 +41,21 @@ Req Body
 }
 ```
 
+Get REsponse
+
+```
+{
+    "message": "User details saved",
+    "data": {
+        "balance": 0,
+        "_id": "5ff6c836520def15e54251ff",
+        "email": "sandyghane@gmail.com",
+        "phone": 8888710346,
+        "profileID": "01d4e42f754054ac3b1e23af5e54568d",
+        "__v": 0
+    }
+}
+```
+
 
 
