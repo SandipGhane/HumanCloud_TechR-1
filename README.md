@@ -4,5 +4,6 @@
 
 Clone the repo
 
-```bash git clone https://github.com/SandipGhane/HumanCloud_TechR-1.git```
+```git clone https://github.com/SandipGhane/HumanCloud_TechR-1.git```
+```cd HumanCloud_TechR-1```
 
