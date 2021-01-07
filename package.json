@@ -1,0 +1,36 @@
+{
+  "name": "humancloud_techr-1",
+  "version": "1.0.0",
+  "description": "Humancloud R-1",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SandipGhane/HumanCloud_TechR-1.git"
+  },
+  "author": "SandipGhane",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SandipGhane/HumanCloud_TechR-1/issues"
+  },
+  "homepage": "https://github.com/SandipGhane/HumanCloud_TechR-1#readme",
+  "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
+    "cors": "^2.8.5",
+    "crypto": "^1.0.1",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-validator": "^6.9.2",
+    "jsontokens": "^3.0.0",
+    "jsonwebtoken": "^8.5.1",
+    "moment-timezone": "^0.5.32",
+    "mongoose": "^5.11.10",
+    "nodemailer": "^6.4.17",
+    "nodemon": "^2.0.6",
+    "uniqid": "^5.2.0",
+    "uuid": "^8.3.2"
+  }
+}
