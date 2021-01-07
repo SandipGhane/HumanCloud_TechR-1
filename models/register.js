@@ -34,8 +34,8 @@ const saveUserDetails = async(params)=>{
 }
 
 const deleteData = async(profileID)=>{
-   const user = new UserSchema;
-   user.findOneAndRemove({'profileID':profileID},(err)=>{
+   const user = new UserSchema();
+   user.findOneAndRemove({profileID:profileID},(err)=>{
        if(err){
            throw err;
        }else{
@@ -44,7 +44,7 @@ const deleteData = async(profileID)=>{
    })
 }
 
-const deleteUser = (Model,query) => Model.deleteOne({profileID:query});
+
 const updateUser=async(id,user) => updateData(UserSchema,{_id:id},{firstName:user.firstName,lastName:user.lastName,email:user.email,city:user.city,country:user.country,pincode:user.pincode,state:user.state});
 const updateData = (Model,query,updates) => Model.findOneAndUpdate(query,updates);
 const findUser = async(profileID)=> findOne(UserSchema,{ profileID });
