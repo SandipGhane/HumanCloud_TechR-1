@@ -8,6 +8,7 @@ const mongoose = require("mongoose");
 
 const profile = require('./routes/profile');
 const ewallet = require('./routes/wallet');
+const auth = require('./routes/auth');
 const app = express();
 
 dotenv.config();
@@ -31,6 +32,7 @@ mongoose
 const addRoutes =()=>{
   app.use('/profile',profile);
   app.use('/ewallet',ewallet);
+  app.use('/auth',auth);
 }
 
 
