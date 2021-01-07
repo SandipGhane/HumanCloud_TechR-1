@@ -57,5 +57,28 @@ Get REsponse
 }
 ```
 
+## Login
+
+http://localhost:7000/auth/login
+
+Req
+```
+{
+    "email":"sandyghane@gmail.com",
+    "password":"sandip"
+}
+```
+
+Response
+```
+{
+    "message": "User logged in",
+    "userToken": "eyJ0eXAiOiJKV1QiLCJhbGciOiJFUzI1NksifQ.IntcImlhdFwiOiAxNDQwNzEzNDE0Ljg1fSI.4gJJ9YKDcyj0vrjBSpCeraMTsZE0fkbnhlDygN-VFfG8TqfiJgWB7PhhYrpLzABVqYHoWZJQI9d0mdUWi_FDAA",
+    "profileID": "01d4e42f754054ac3b1e23af5e54568d"
+}
+```
+
+
+
 
 
