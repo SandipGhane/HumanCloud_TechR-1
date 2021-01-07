@@ -20,5 +20,9 @@ Install npm
 
 ```https://humancloudround.herokuapp.com/```
 
+## Postman collection
+
+https://www.getpostman.com/collections/4b1d9f10681d8dcfa8ea
+
 
 
