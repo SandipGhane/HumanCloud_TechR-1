@@ -68,13 +68,45 @@ Req
     "password":"sandip"
 }
 ```
-
 Response
 ```
 {
     "message": "User logged in",
     "userToken": "eyJ0eXAiOiJKV1QiLCJhbGciOiJFUzI1NksifQ.IntcImlhdFwiOiAxNDQwNzEzNDE0Ljg1fSI.4gJJ9YKDcyj0vrjBSpCeraMTsZE0fkbnhlDygN-VFfG8TqfiJgWB7PhhYrpLzABVqYHoWZJQI9d0mdUWi_FDAA",
     "profileID": "01d4e42f754054ac3b1e23af5e54568d"
+}
+```
+## Fill Profile 
+
+Req
+```
+{
+    "firstName":"kiran",
+    "lastName":"Ghane",
+    "city":"Sangamner",
+    "phone":8888710346,
+    "state":"maha",
+    "email":"kiranghane@gmail.com",
+    "country":"india",
+    "pincode":56734,
+    "profileID":"11467c91def7ba5983d9dadd223ad2e7"
+}
+```
+## if profile filled already then api update all data instead your phone
+Response
+```
+{
+    "message": "Update details",
+    "data": {
+        "balance": 0,
+        "_id": "5ff6bd212a7501151265c088",
+        "email": "kiranghane@gmail.com",
+        "phone": 7350361316,
+        "profileID": "11467c91def7ba5983d9dadd223ad2e7",
+        "__v": 0,
+        "firstName": "kiran",
+        "lastName": "Ghane"
+    }
 }
 ```
 
