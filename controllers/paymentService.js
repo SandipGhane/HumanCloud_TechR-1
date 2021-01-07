@@ -40,6 +40,7 @@ exports.debitCard = async (params)=>{
     transaction.amount = amount;
     transaction.operation = 'AddFunds';
     transaction.phone = phone;
+    transaction.destignationPhone = phone;
     transaction.reference = "payment_gateway_transaction:"+savedGatewayTransaction.transactionId;
     const savedTransaction = await transaction.save();
     const savedCustomer = await User.findOne({profileID:profileID});
