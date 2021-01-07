@@ -29,7 +29,8 @@ const simulateGatewayCall=async(card, amount) =>{
 }
 
 exports.debitCard = async (params)=>{
-    const { phone, card, amount } = params;
+    let updatedAmount;
+    const { phone, card, amount,profileID } = params;
     const gatewayResponse = await simulateGatewayCall(card, amount);
     const gatewayTransaction = new GatewayTransaction(gatewayResponse);
     const savedGatewayTransaction = await gatewayTransaction.save();
@@ -42,5 +43,12 @@ exports.debitCard = async (params)=>{
     transaction.phone = phone;
     transaction.reference = "payment_gateway_transaction:"+savedGatewayTransaction.transactionId;
     const savedTransaction = await transaction.save();
+    const savedCustomer = await User.findOne({profileID:profileID});
+    updatedAmount = amount + savedCustomer.balance;
+    console.log('updated amount',savedCustomer.profileID);
+    if(savedCustomer){
+        await User.findOneAndUpdate({_id:savedCustomer._id},{balance:updatedAmount});
+    }
+    savedTransaction.accountBalance = updatedAmount;
     return savedTransaction;
 }
